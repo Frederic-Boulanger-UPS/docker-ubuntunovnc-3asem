@@ -1,4 +1,4 @@
-.PHONY: build run
+.PHONY: build run stop
 
 REPO = fredblgr/ubuntunovnc-3asl
 TAG  = 2020
@@ -12,7 +12,10 @@ run:
 		-v ${PWD}:/workspace:rw \
 		-e USER=student -e PASSWORD=CS3ASL \
 		-e RESOLUTION=1680x1050 \
-		--name ubuntunovnc-why3-test \
+		--name ubuntunovnc-3asl-test \
 		$(REPO):$(TAG)
 	sleep 5
 	open -a firefox http://localhost:6080
+
+stop:
+	docker stop ubuntunovnc-3asl-test
