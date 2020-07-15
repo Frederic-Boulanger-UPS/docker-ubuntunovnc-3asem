@@ -36,9 +36,6 @@ RUN wget https://isabelle.in.tum.de/dist/Isabelle2020_linux.tar.gz \
 RUN rm Isabelle2020_linux.tar.gz
 COPY resources/Isabelle2020.desktop /usr/share/applications/
 
-# Make the JDK coming with Isabelle usable by everyone
-RUN echo 'export PATH=${PATH}:/usr/local/Isabelle2020/contrib/jdk-11.0.5+10/x86_64-linux/bin' >> /root/.bashrc
-
 # Install Why3
 RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
   && tar zxf why3-1.3.1.tar.gz \
@@ -46,30 +43,6 @@ RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
      make install \
   && why3 config --detect-provers
 RUN rm -r why3-*
-
-# Install Eclipse Modeling 2020-06
-# Copy existing configuration containing:
-# * Eclipse Modeling 2020-06
-# * Acceleo 3.7 from the OBEO Market Place
-# * From Install New Software (with all available sites)
-#   * All Acceleo
-#   * Additional Interpreters for Acceleo
-#   * Modeling > all QVT operational
-#   * Modeling > Xpand SDK
-#   * Modeling > Xtext SDK
-#   * Programming languages > C/C++ Dev Tools
-#   * Programming languages > C/C++ library API doc hover help
-#   * Programming languages > C/C++ Unit Testing
-#   * Programming languages > Eclipse XML editors and tools
-#   * Programming languages > Javascript dev tools
-#   * Programming languages > Wild Web developer
-
-COPY resources/eclipse-modeling-2020-06.tgz /usr/local/
-RUN cd /usr/local; tar zxf eclipse-modeling-2020-06.tgz && rm eclipse-modeling-2020-06.tgz
-# Link the Java jdk from Isabelle 2020 for running Eclipse too
-RUN ln -s /usr/local/eclipse-modeling-2020-06/eclipse /usr/local/bin/eclipse; \
-    ln -s /usr/local/Isabelle2020/contrib/jdk-11.0.5+10/x86_64-linux/jre /usr/local/eclipse-modeling-2020-06/
-COPY resources/Eclipse.desktop /usr/share/applications/
 
 # Configuration of the file manager and the application launcher
 COPY resources/dot_config/lxpanel/LXDE/panels/panel /root/.config/lxpanel/LXDE/panels/
