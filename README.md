@@ -8,7 +8,7 @@ Based on the work by [Doro Wu](https://github.com/fcwu), see on [Docker](https:/
 
 This image contains Isabelle 2020, the Coq IDE, and Why3 with various solvers
 
-The source files are available on [GitHub](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3aSem).
+The source files are available on [GitHub](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3asem).
 
 Typical usage is:
 
