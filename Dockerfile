@@ -51,13 +51,13 @@ RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
   && tar zxf why3-1.3.1.tar.gz \
   && cd why3-1.3.1; ./configure; make ; \
      make install \
-  && why3 config --detect-provers
-RUN rm -r why3-*
+  && why3 config --detect-provers && mv /home/ubuntu/.why3.conf /root/ ;\
+  cd ..; rm -r why3-1.3.1
 
 # Configuration of the file manager and the application launcher
 COPY resources/dot_config/lxpanel/LXDE/panels/panel /root/.config/lxpanel/LXDE/panels/
 COPY resources/dot_config/pcmanfm/LXDE/pcmanfm.conf /root/.config/pcmanfm/LXDE/
-COPY resources/dot_why3.conf /root/.why3.conf
+#COPY resources/dot_why3.conf /root/.why3.conf
 RUN echo 'cp /root/.why3.conf ${HOME}' >> /root/.novnc_setup
 
 # # Install Why3 when working with Isabelle
