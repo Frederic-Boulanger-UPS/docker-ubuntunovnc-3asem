@@ -1,10 +1,11 @@
 .PHONY: build run stop
 
-REPO = fredblgr/ubuntunovnc-3asem
+REPO = fredblgr/
+IMAGE= ubuntunovnc-3asem
 TAG  = 2020
 
 build:
-	docker build -t $(REPO):$(TAG) .
+	docker build -t $(REPO)$(IMAGE):$(TAG) .
 
 run:
 	docker run --rm -d \
@@ -12,8 +13,8 @@ run:
 		-v ${PWD}:/workspace:rw \
 		-e USER=student -e PASSWORD=CS3ASL \
 		-e RESOLUTION=1680x1050 \
-		--name ubuntunovnc-3asem-test \
-		$(REPO):$(TAG)
+		--name $(IMAGE)-test \
+		$(REPO)$(IMAGE):$(TAG)
 	sleep 5
 	open -a firefox http://localhost:6080
 
@@ -22,10 +23,10 @@ runasroot:
 		-p 6080:80 \
 		-v ${PWD}:/workspace:rw \
 		-e RESOLUTION=1680x1050 \
-		--name ubuntunovnc-3asem-test \
-		$(REPO):$(TAG)
+		--name $(IMAGE)-test \
+		$(REPO)$(IMAGE):$(TAG)
 	sleep 5
 	open -a firefox http://localhost:6080
 
 stop:
-	docker stop ubuntunovnc-3asem-test
+	docker stop $(IMAGE)-test
