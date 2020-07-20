@@ -17,7 +17,7 @@ if command -v open 2>&1 /dev/null
 then
   echo "Found 'open' command"
   open ${URL}
-elif command -v xdg-open2 2>&1 /dev/null
+elif command -v xdg-open 2>&1 /dev/null
 then
   xdg-open "${URL}"
 else
