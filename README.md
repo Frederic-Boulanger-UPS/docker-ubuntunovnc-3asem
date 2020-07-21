@@ -1,8 +1,9 @@
 docker-ubuntunovnc-3aSem
 =======================
 
-
 Docker image used for teaching in the "Software Science" 3rd year at [CentraleSupélec](http://www.centralesupelec.fr).
+
+Available on [Docker hub](https://hub.docker.com/r/fredblgr/ubuntunovnc-3aSem)
 
 Based on the work by [Doro Wu](https://github.com/fcwu), see on [Docker](https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/)
 
@@ -15,6 +16,14 @@ Typical usage is:
 ```
 docker run --rm -d -p 6080:80 -v $PWD:/workspace:rw -e USER=username -e PASSWORD=password -e RESOLUTION=1680x1050 --name ubuntu3aSem-novnc fredblgr/ubuntunovnc-3aSem:2020
 ```
+
+Very Quick Start
+----------------
+Run ```./start3Asl.sh```, you will have Ubuntu 20.04 in your browser, with the current working directory mounted on /workspace. The container will be removed when it stops, so save your work in /workspace if you want to keep it.
+
+There is a ```start3Asl.ps1``` for the PowerShell of Windows. You may have to allow the execution of scripts with the command:
+
+```Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser```.
 
 Quick Start
 -------------------------
