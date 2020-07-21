@@ -3,7 +3,7 @@ docker-ubuntunovnc-3aSem
 
 Docker image used for teaching in the "Software Science" 3rd year at [CentraleSupélec](http://www.centralesupelec.fr).
 
-Available on [Docker hub](https://hub.docker.com/r/fredblgr/ubuntunovnc-3aSem)
+Available on [Docker hub](https://hub.docker.com/r/fredblgr/ubuntunovnc-3asem)
 
 Based on the work by [Doro Wu](https://github.com/fcwu), see on [Docker](https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/)
 
