@@ -56,9 +56,6 @@ Plugin {
     Button {
       id=Isabelle2019.desktop
     }
-    Button {
-      id=gedit.desktop
-    }
   }
 }
 Plugin {
