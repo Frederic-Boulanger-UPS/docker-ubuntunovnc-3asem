@@ -7,7 +7,7 @@ Available on [Docker hub](https://hub.docker.com/r/fredblgr/ubuntunovnc-3asem)
 
 Based on the work by [Doro Wu](https://github.com/fcwu), see on [Docker](https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/)
 
-This image contains Isabelle 2020, the Coq IDE, and Why3 with various solvers
+This image contains Isabelle 2019 or 2020, the Coq IDE, and Why3 with various solvers
 
 The source files are available on [GitHub](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3asem).
 The [isabelle2019](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3asem/tree/isabelle2019) branch has the source files for the 2019 image.
