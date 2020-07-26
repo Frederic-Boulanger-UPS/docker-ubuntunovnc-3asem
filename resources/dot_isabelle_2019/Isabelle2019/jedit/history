@@ -1,0 +1,12 @@
+[vfs.browser.filter]
+*\[^~#\]
+[vfs.browser.path]
+/root
+[action]
+exit
+isabelle.complete
+backspace
+global-options
+prev-line
+isabelle.newline
+next-line

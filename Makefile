@@ -2,7 +2,7 @@
 
 REPO = fredblgr/
 IMAGE= ubuntunovnc-3asem
-TAG  = 2020
+TAG  = 2019
 
 build:
 	docker build -t $(REPO)$(IMAGE):$(TAG) .
