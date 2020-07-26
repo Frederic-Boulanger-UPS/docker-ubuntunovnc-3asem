@@ -28,6 +28,7 @@ ARG ISABIN=isabelle2019
 ARG ISADESKTOP=resources/Isabelle2019.desktop
 ARG ISAPREFS=resources/dot_isabelle_2019
 ARG ISAHEAPSDIR=Isabelle2019/heaps/polyml-5.8_x86_64_32-linux
+ARG ISAJDK=/usr/local/Isabelle2019/contrib/jdk-11.0.3+7/x86_64-linux
 RUN wget https://isabelle.in.tum.de/website-Isabelle2019/dist/${ISATARGZ} \
   && tar -xzf ${ISATARGZ} \
   && mv ${ISAINSTDIR} /usr/local/ \
@@ -42,6 +43,8 @@ RUN rm ${ISATARGZ}
 COPY ${ISADESKTOP} /usr/share/applications/
 COPY ${ISAPREFS} /root/.isabelle
 RUN echo 'cp -r /root/.isabelle ${HOME}' >> /root/.novnc_setup
+RUN ln -s ${ISAJDK}/bin/java /usr/local/bin/ ; \
+    ln -s ${ISAJDK}/bin/javac /usr/local/bin/
 
 # # Install Isabelle 2020
 # ARG ISATARGZ=Isabelle2020_linux.tar.gz
@@ -90,5 +93,4 @@ RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
 RUN echo 'cp /root/.why3.conf ${HOME}' >> /root/.novnc_setup
 
 # Configuration of the file manager and the application launcher
-COPY resources/dot_config/lxpanel/LXDE/panels/panel_isa2019 /root/.config/lxpanel/LXDE/panels/
-COPY resources/dot_config/pcmanfm/LXDE/pcmanfm.conf /root/.config/pcmanfm/LXDE/
+COPY resources/dot_config/lxpanel/LXDE/panels/panel_isa2019 /root/.config/lxpanel/LXDE/panels/panel
