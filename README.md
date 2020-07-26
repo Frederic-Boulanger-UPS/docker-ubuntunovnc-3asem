@@ -10,6 +10,7 @@ Based on the work by [Doro Wu](https://github.com/fcwu), see on [Docker](https:/
 This image contains Isabelle 2020, the Coq IDE, and Why3 with various solvers
 
 The source files are available on [GitHub](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3asem).
+The [isabelle2019](https://github.com/Frederic-Boulanger-UPS/docker-ubuntunovnc-3asem/tree/isabelle2019) branch has the source files for the 2019 image.
 
 Typical usage is:
 
