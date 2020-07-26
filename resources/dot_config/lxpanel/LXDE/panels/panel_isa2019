@@ -51,10 +51,13 @@ Plugin {
       id=lxterminal.desktop
     }
     Button {
-      id=gedit.desktop
+      id=org.gnome.gedit.desktop
     }
     Button {
       id=Isabelle2019.desktop
+    }
+    Button {
+      id=gedit.desktop
     }
   }
 }
