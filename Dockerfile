@@ -76,10 +76,25 @@ RUN ln -s ${ISAJDK}/bin/java /usr/local/bin/ ; \
 #   cd ..; rm -r why3-1.3.1
 # RUN echo 'cp /root/.why3.conf ${HOME}' >> /root/.novnc_setup
 
-# Install Why3 when working with Isabelle
-RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
-  && tar zxf why3-1.3.1.tar.gz \
-  && cd why3-1.3.1; ./configure; make ; \
+# Install Why3 1.3.1 when working with Isabelle
+# RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
+#   && tar zxf why3-1.3.1.tar.gz \
+#   && cd why3-1.3.1; ./configure; make ; \
+#      echo "/usr/local/lib/why3/isabelle" >> /usr/local/${ISAINSTDIR}/etc/components ; \
+#      make install \
+#   && mv /home/ubuntu/.isabelle/${ISAHEAPSDIR}/HOL-Word \
+#         /usr/local/${ISAHEAPSDIR}/ \
+#   && mv /home/ubuntu/.isabelle/${ISAHEAPSDIR}/Why3 \
+#         /usr/local/${ISAHEAPSDIR}/ \
+#   && mv /home/ubuntu/.isabelle/${ISAHEAPSDIR}/log/* \
+#         /usr/local/${ISAHEAPSDIR}/log/ \
+#   && why3 config --detect-provers && mv /home/ubuntu/.why3.conf /root/ ;\
+#   cd ..; rm -r why3-1.3.1
+
+# Install Why3 1.3.3 when working with Isabelle
+RUN wget https://gforge.inria.fr/frs/download.php/file/38367/why3-1.3.3.tar.gz \
+  && tar zxf why3-1.3.3.tar.gz \
+  && cd why3-1.3.3; ./configure; make ; \
      echo "/usr/local/lib/why3/isabelle" >> /usr/local/${ISAINSTDIR}/etc/components ; \
      make install \
   && mv /home/ubuntu/.isabelle/${ISAHEAPSDIR}/HOL-Word \
@@ -89,7 +104,7 @@ RUN wget https://gforge.inria.fr/frs/download.php/file/38291/why3-1.3.1.tar.gz \
   && mv /home/ubuntu/.isabelle/${ISAHEAPSDIR}/log/* \
         /usr/local/${ISAHEAPSDIR}/log/ \
   && why3 config --detect-provers && mv /home/ubuntu/.why3.conf /root/ ;\
-  cd ..; rm -r why3-1.3.1
+  cd ..; rm -r why3-1.3.3
 RUN echo 'cp /root/.why3.conf ${HOME}' >> /root/.novnc_setup
 
 # Configuration of the file manager and the application launcher
