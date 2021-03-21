@@ -8,6 +8,8 @@ RUN apt-get install -y gcc ocaml menhir \
 # RUN apt-get install -y coqide alt-ergo cvc4 gedit wget
 RUN apt-get install -y coqide alt-ergo gedit wget
 
+RUN apt autoremove && apt autoclean
+
 # Not done because we use the SMT solvers bundled with Isabelle
 # Install Z3 4.8.6
 # RUN wget https://github.com/Z3Prover/z3/archive/z3-4.8.6.tar.gz \
